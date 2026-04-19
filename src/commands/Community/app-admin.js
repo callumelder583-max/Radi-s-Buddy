@@ -166,10 +166,10 @@ async function handleSetup(interaction) {
         ),
         new ActionRowBuilder().addComponents(
             new TextInputBuilder()
-                .setCustomId('role_id')
-                .setLabel('Role ID')
+                .setCustomId('User ID')
+                .setLabel('User ID')
                 .setStyle(TextInputStyle.Short)
-                .setPlaceholder('Right-click a role and copy its ID')
+                .setPlaceholder('Enter Your User ID')
                 .setMaxLength(20)
                 .setMinLength(1)
                 .setRequired(true),
@@ -187,7 +187,7 @@ async function handleSetup(interaction) {
         new ActionRowBuilder().addComponents(
             new TextInputBuilder()
                 .setCustomId('app_question_2')
-                .setLabel('Question 2 (optional)')
+                .setLabel('Question 2 (required)')
                 .setStyle(TextInputStyle.Short)
                 .setPlaceholder('What experience do you have?')
                 .setMaxLength(100)
@@ -196,8 +196,72 @@ async function handleSetup(interaction) {
         new ActionRowBuilder().addComponents(
             new TextInputBuilder()
                 .setCustomId('app_question_3')
-                .setLabel('Question 3 (optional)')
+                .setLabel('Question 3 (required)')
                 .setStyle(TextInputStyle.Short)
+                .setPlaceholder('What experience do you have?')
+                .setMaxLength(100)
+                .setRequired(false),
+        ),
+         new ActionRowBuilder().addComponents(
+            new TextInputBuilder()
+                .setCustomId('app_question_4')
+                .setLabel('Question 4 (required)')
+                .setPlaceholder('What experience do you have?')
+                .setStyle(TextInputStyle.Short)
+                .setMaxLength(100)
+                .setRequired(false),
+        ),
+         new ActionRowBuilder().addComponents(
+            new TextInputBuilder()
+                .setCustomId('app_question_5')
+                .setLabel('Question 5 (required)')
+                .setStyle(TextInputStyle.Short)
+                .setPlaceholder('What experience do you have?')
+                .setMaxLength(100)
+                .setRequired(false),
+        ),
+         new ActionRowBuilder().addComponents(
+            new TextInputBuilder()
+                .setCustomId('app_question_6')
+                .setLabel('Question 6 (required)')
+                .setStyle(TextInputStyle.Short)
+                .setPlaceholder('What experience do you have?')
+                .setMaxLength(100)
+                .setRequired(false),
+        ),
+         new ActionRowBuilder().addComponents(
+            new TextInputBuilder()
+                .setCustomId('app_question_7')
+                .setLabel('Question 7 (required)')
+                .setStyle(TextInputStyle.Short)
+                .setPlaceholder('What experience do you have?')
+                .setMaxLength(100)
+                .setRequired(false),
+        ),
+         new ActionRowBuilder().addComponents(
+            new TextInputBuilder()
+                .setCustomId('app_question_8')
+                .setLabel('Question 8 (optional)')
+                .setStyle(TextInputStyle.Short)
+                .setPlaceholder('What experience do you have?')
+                .setMaxLength(100)
+                .setRequired(false),
+        ),
+         new ActionRowBuilder().addComponents(
+            new TextInputBuilder()
+                .setCustomId('app_question_9')
+                .setLabel('Question 9 (optional)')
+                .setStyle(TextInputStyle.Short)
+                .setPlaceholder('What experience do you have?')
+                .setMaxLength(100)
+                .setRequired(false),
+        ),
+         new ActionRowBuilder().addComponents(
+            new TextInputBuilder()
+                .setCustomId('app_question_10')
+                .setLabel('Question 10 (optional)')
+                .setStyle(TextInputStyle.Short)
+                .setPlaceholder('What experience do you have?')
                 .setMaxLength(100)
                 .setRequired(false),
         ),
