@@ -229,42 +229,6 @@ async function handleSetup(interaction) {
                 .setMaxLength(100)
                 .setRequired(true),
         ),
-         new ActionRowBuilder().addComponents(
-            new TextInputBuilder()
-                .setCustomId('app_question_7')
-                .setLabel('Question 7 (required)')
-                .setStyle(TextInputStyle.Short)
-                .setPlaceholder('What experience do you have?')
-                .setMaxLength(100)
-                .setRequired(true),
-        ),
-         new ActionRowBuilder().addComponents(
-            new TextInputBuilder()
-                .setCustomId('app_question_8')
-                .setLabel('Question 8 (optional)')
-                .setStyle(TextInputStyle.Short)
-                .setPlaceholder('What experience do you have?')
-                .setMaxLength(100)
-                .setRequired(false),
-        ),
-         new ActionRowBuilder().addComponents(
-            new TextInputBuilder()
-                .setCustomId('app_question_9')
-                .setLabel('Question 9 (optional)')
-                .setStyle(TextInputStyle.Short)
-                .setPlaceholder('What experience do you have?')
-                .setMaxLength(100)
-                .setRequired(false),
-        ),
-         new ActionRowBuilder().addComponents(
-            new TextInputBuilder()
-                .setCustomId('app_question_10')
-                .setLabel('Question 10 (optional)')
-                .setStyle(TextInputStyle.Short)
-                .setPlaceholder('What experience do you have?')
-                .setMaxLength(100)
-                .setRequired(false),
-        ),
     ];
 
     modal.addComponents(...rows);
