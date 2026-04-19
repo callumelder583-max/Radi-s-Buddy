@@ -191,7 +191,7 @@ async function handleSetup(interaction) {
                 .setStyle(TextInputStyle.Short)
                 .setPlaceholder('What experience do you have?')
                 .setMaxLength(100)
-                .setRequired(false),
+                .setRequired(true),
         ),
         new ActionRowBuilder().addComponents(
             new TextInputBuilder()
@@ -200,7 +200,7 @@ async function handleSetup(interaction) {
                 .setStyle(TextInputStyle.Short)
                 .setPlaceholder('What experience do you have?')
                 .setMaxLength(100)
-                .setRequired(false),
+                .setRequired(true),
         ),
          new ActionRowBuilder().addComponents(
             new TextInputBuilder()
@@ -209,7 +209,7 @@ async function handleSetup(interaction) {
                 .setPlaceholder('What experience do you have?')
                 .setStyle(TextInputStyle.Short)
                 .setMaxLength(100)
-                .setRequired(false),
+                .setRequired(true),
         ),
          new ActionRowBuilder().addComponents(
             new TextInputBuilder()
@@ -218,7 +218,7 @@ async function handleSetup(interaction) {
                 .setStyle(TextInputStyle.Short)
                 .setPlaceholder('What experience do you have?')
                 .setMaxLength(100)
-                .setRequired(false),
+                .setRequired(true),
         ),
          new ActionRowBuilder().addComponents(
             new TextInputBuilder()
@@ -227,7 +227,7 @@ async function handleSetup(interaction) {
                 .setStyle(TextInputStyle.Short)
                 .setPlaceholder('What experience do you have?')
                 .setMaxLength(100)
-                .setRequired(false),
+                .setRequired(true),
         ),
          new ActionRowBuilder().addComponents(
             new TextInputBuilder()
@@ -236,7 +236,7 @@ async function handleSetup(interaction) {
                 .setStyle(TextInputStyle.Short)
                 .setPlaceholder('What experience do you have?')
                 .setMaxLength(100)
-                .setRequired(false),
+                .setRequired(true),
         ),
          new ActionRowBuilder().addComponents(
             new TextInputBuilder()
