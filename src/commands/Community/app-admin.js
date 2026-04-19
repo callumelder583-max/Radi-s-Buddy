@@ -157,19 +157,19 @@ async function handleSetup(interaction) {
         new ActionRowBuilder().addComponents(
             new TextInputBuilder()
                 .setCustomId('app_name')
-                .setLabel('Applicantion Name')
+                .setLabel('Application Name')
                 .setStyle(TextInputStyle.Short)
-                .setPlaceholder('staff')
+                .setPlaceholder('e.g., Moderator, Helper, Developer')
                 .setMaxLength(50)
                 .setMinLength(1)
                 .setRequired(true),
         ),
         new ActionRowBuilder().addComponents(
             new TextInputBuilder()
-                .setCustomId('user_id')
-                .setLabel('User ID')
+                .setCustomId('role_id')
+                .setLabel('Role ID')
                 .setStyle(TextInputStyle.Short)
-                .setPlaceholder('Enter Your UserID')
+                .setPlaceholder('Right-click a role and copy its ID')
                 .setMaxLength(20)
                 .setMinLength(1)
                 .setRequired(true),
@@ -279,8 +279,8 @@ async function handleSetup(interaction) {
                 i.user.id === interaction.user.id,
         });
 
-        const appName = submitted.fields.getTextInputValue('app_Name').trim();
-        const Userid = submitted.fields.getTextInputValue('user_id').trim();
+        const appName = submitted.fields.getTextInputValue('app_name').trim();
+        const roleId = submitted.fields.getTextInputValue('role_id').trim();
         const questions = [
             submitted.fields.getTextInputValue('app_question_1').trim(),
             submitted.fields.getTextInputValue('app_question_2').trim(),
