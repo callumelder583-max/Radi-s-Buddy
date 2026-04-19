@@ -156,8 +156,8 @@ async function handleSetup(interaction) {
     const rows = [
         new ActionRowBuilder().addComponents(
             new TextInputBuilder()
-                .setCustomId('Staff_Application')
-                .setLabel('Applicant Name')
+                .setCustomId('app_Name')
+                .setLabel('Applicantion Name')
                 .setStyle(TextInputStyle.Short)
                 .setPlaceholder('staff')
                 .setMaxLength(50)
@@ -166,8 +166,8 @@ async function handleSetup(interaction) {
         ),
         new ActionRowBuilder().addComponents(
             new TextInputBuilder()
-                .setCustomId('User_ID')
-                .setLabel('UserID')
+                .setCustomId('user_id')
+                .setLabel('User ID')
                 .setStyle(TextInputStyle.Short)
                 .setPlaceholder('Enter Your UserID')
                 .setMaxLength(20)
@@ -252,8 +252,8 @@ async function handleSetup(interaction) {
                 i.user.id === interaction.user.id,
         });
 
-        const Staff Application = submitted.fields.getTextInputValue('Staff_Application').trim();
-        const UserID = submitted.fields.getTextInputValue('User_ID').trim();
+        const appName = submitted.fields.getTextInputValue('app_Name').trim();
+        const Userid = submitted.fields.getTextInputValue('user_id').trim();
         const questions = [
             submitted.fields.getTextInputValue('app_question_1').trim(),
             submitted.fields.getTextInputValue('app_question_2').trim(),
