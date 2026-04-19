@@ -198,7 +198,7 @@ async function handleSetup(interaction) {
                 .setCustomId('app_question_3')
                 .setLabel('Question 3 (required)')
                 .setStyle(TextInputStyle.Short)
-                .setPlaceholder('What experience do you have?')
+                .setPlaceholder('Lol')
                 .setMaxLength(100)
                 .setRequired(true),
         ),
@@ -206,7 +206,7 @@ async function handleSetup(interaction) {
             new TextInputBuilder()
                 .setCustomId('app_question_4')
                 .setLabel('Question 4 (required)')
-                .setPlaceholder('What experience do you have?')
+                .setPlaceholder('Hello')
                 .setStyle(TextInputStyle.Short)
                 .setMaxLength(100)
                 .setRequired(true),
@@ -216,7 +216,7 @@ async function handleSetup(interaction) {
                 .setCustomId('app_question_5')
                 .setLabel('Question 5 (required)')
                 .setStyle(TextInputStyle.Short)
-                .setPlaceholder('What experience do you have?')
+                .setPlaceholder('Idk')
                 .setMaxLength(100)
                 .setRequired(true),
         ),
@@ -225,7 +225,7 @@ async function handleSetup(interaction) {
                 .setCustomId('app_question_6')
                 .setLabel('Question 6 (required)')
                 .setStyle(TextInputStyle.Short)
-                .setPlaceholder('What experience do you have?')
+                .setPlaceholder('Maybe')
                 .setMaxLength(100)
                 .setRequired(true),
         ),
@@ -234,7 +234,7 @@ async function handleSetup(interaction) {
                 .setCustomId('app_question_7')
                 .setLabel('Question 7 (required)')
                 .setStyle(TextInputStyle.Short)
-                .setPlaceholder('What experience do you have?')
+                .setPlaceholder('Goodbye')
                 .setMaxLength(100)
                 .setRequired(true),
         ),
@@ -243,7 +243,7 @@ async function handleSetup(interaction) {
                 .setCustomId('app_question_8')
                 .setLabel('Question 8 (optional)')
                 .setStyle(TextInputStyle.Short)
-                .setPlaceholder('What experience do you have?')
+                .setPlaceholder('Bunny')
                 .setMaxLength(100)
                 .setRequired(false),
         ),
@@ -252,7 +252,7 @@ async function handleSetup(interaction) {
                 .setCustomId('app_question_9')
                 .setLabel('Question 9 (optional)')
                 .setStyle(TextInputStyle.Short)
-                .setPlaceholder('What experience do you have?')
+                .setPlaceholder('Hell')
                 .setMaxLength(100)
                 .setRequired(false),
         ),
@@ -261,7 +261,6 @@ async function handleSetup(interaction) {
                 .setCustomId('app_question_10')
                 .setLabel('Question 10 (optional)')
                 .setStyle(TextInputStyle.Short)
-                .setPlaceholder('What experience do you have?')
                 .setMaxLength(100)
                 .setRequired(false),
         ),
@@ -291,7 +290,7 @@ async function handleSetup(interaction) {
             submitted.fields.getTextInputValue('app_question_7').trim(),
             submitted.fields.getTextInputValue('app_question_8').trim(),
             submitted.fields.getTextInputValue('app_question_9').trim(),
-            submitted.fields.getTextInputValue('app_question_10').trim(),
+           submitted.fields.getTextInputValue('app_question_10').trim(),
         ].filter(q => q.length > 0);
 
         // Get the role to verify it exists
