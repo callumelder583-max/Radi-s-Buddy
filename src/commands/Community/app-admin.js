@@ -159,14 +159,14 @@ async function handleSetup(interaction) {
                 .setCustomId('Staff Application')
                 .setLabel('Applicant Name')
                 .setStyle(TextInputStyle.Short)
-                .setPlaceholder('staff, dev, lol')
+                .setPlaceholder('staff')
                 .setMaxLength(50)
                 .setMinLength(1)
                 .setRequired(true),
         ),
         new ActionRowBuilder().addComponents(
             new TextInputBuilder()
-                .setCustomId('Nmae')
+                .setCustomId('Name')
                 .setLabel('Name')
                 .setStyle(TextInputStyle.Short)
                 .setPlaceholder('Enter Your UserName')
