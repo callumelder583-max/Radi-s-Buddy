@@ -156,7 +156,7 @@ async function handleSetup(interaction) {
     const rows = [
         new ActionRowBuilder().addComponents(
             new TextInputBuilder()
-                .setCustomId('app_Name')
+                .setCustomId('app_name')
                 .setLabel('Applicantion Name')
                 .setStyle(TextInputStyle.Short)
                 .setPlaceholder('staff')
@@ -237,6 +237,33 @@ async function handleSetup(interaction) {
                 .setPlaceholder('What experience do you have?')
                 .setMaxLength(100)
                 .setRequired(true),
+        ),
+        new ActionRowBuilder().addComponents(
+            new TextInputBuilder()
+                .setCustomId('app_question_8')
+                .setLabel('Question 8 (optional)')
+                .setStyle(TextInputStyle.Short)
+                .setPlaceholder('What experience do you have?')
+                .setMaxLength(100)
+                .setRequired(false),
+        ),
+        new ActionRowBuilder().addComponents(
+            new TextInputBuilder()
+                .setCustomId('app_question_9')
+                .setLabel('Question 9 (optional)')
+                .setStyle(TextInputStyle.Short)
+                .setPlaceholder('What experience do you have?')
+                .setMaxLength(100)
+                .setRequired(false),
+        ),
+        new ActionRowBuilder().addComponents(
+            new TextInputBuilder()
+                .setCustomId('app_question_10')
+                .setLabel('Question 10 (optional)')
+                .setStyle(TextInputStyle.Short)
+                .setPlaceholder('What experience do you have?')
+                .setMaxLength(100)
+                .setRequired(false),
         ),
     ];
 
