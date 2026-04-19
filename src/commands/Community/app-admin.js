@@ -166,10 +166,10 @@ async function handleSetup(interaction) {
         ),
         new ActionRowBuilder().addComponents(
             new TextInputBuilder()
-                .setCustomId('User ID')
-                .setLabel('User ID')
+                .setCustomId('UserID')
+                .setLabel('UserID')
                 .setStyle(TextInputStyle.Short)
-                .setPlaceholder('Enter Your User ID')
+                .setPlaceholder('Enter Your UserID')
                 .setMaxLength(20)
                 .setMinLength(1)
                 .setRequired(true),
