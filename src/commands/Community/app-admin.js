@@ -156,10 +156,10 @@ async function handleSetup(interaction) {
     const rows = [
         new ActionRowBuilder().addComponents(
             new TextInputBuilder()
-                .setCustomId('app_name')
-                .setLabel('Application Name')
+                .setCustomId('Staff Application')
+                .setLabel('Applicant Name')
                 .setStyle(TextInputStyle.Short)
-                .setPlaceholder('e.g., Moderator, Helper, Developer')
+                .setPlaceholder('staff, dev, lol')
                 .setMaxLength(50)
                 .setMinLength(1)
                 .setRequired(true),
