@@ -156,7 +156,7 @@ async function handleSetup(interaction) {
     const rows = [
         new ActionRowBuilder().addComponents(
             new TextInputBuilder()
-                .setCustomId('Staff Application')
+                .setCustomId('Staff_Application')
                 .setLabel('Applicant Name')
                 .setStyle(TextInputStyle.Short)
                 .setPlaceholder('staff')
@@ -166,10 +166,10 @@ async function handleSetup(interaction) {
         ),
         new ActionRowBuilder().addComponents(
             new TextInputBuilder()
-                .setCustomId('Name')
-                .setLabel('Name')
+                .setCustomId('User_ID')
+                .setLabel('UserID')
                 .setStyle(TextInputStyle.Short)
-                .setPlaceholder('Enter Your UserName')
+                .setPlaceholder('Enter Your UserID')
                 .setMaxLength(20)
                 .setMinLength(1)
                 .setRequired(true),
@@ -229,6 +229,15 @@ async function handleSetup(interaction) {
                 .setMaxLength(100)
                 .setRequired(true),
         ),
+         new ActionRowBuilder().addComponents(
+            new TextInputBuilder()
+                .setCustomId('app_question_7')
+                .setLabel('Question 7 (required)')
+                .setStyle(TextInputStyle.Short)
+                .setPlaceholder('What experience do you have?')
+                .setMaxLength(100)
+                .setRequired(true),
+        ),
     ];
 
     modal.addComponents(...rows);
@@ -243,12 +252,19 @@ async function handleSetup(interaction) {
                 i.user.id === interaction.user.id,
         });
 
-        const appName = submitted.fields.getTextInputValue('app_name').trim();
-        const roleId = submitted.fields.getTextInputValue('role_id').trim();
+        const Staff Application = submitted.fields.getTextInputValue('Staff_Application').trim();
+        const UserID = submitted.fields.getTextInputValue('User_ID').trim();
         const questions = [
             submitted.fields.getTextInputValue('app_question_1').trim(),
             submitted.fields.getTextInputValue('app_question_2').trim(),
             submitted.fields.getTextInputValue('app_question_3').trim(),
+            submitted.fields.getTextInputValue('app_question_4').trim(),
+            submitted.fields.getTextInputValue('app_question_5').trim(),
+            submitted.fields.getTextInputValue('app_question_6').trim(),
+            submitted.fields.getTextInputValue('app_question_7').trim(),
+            submitted.fields.getTextInputValue('app_question_8').trim(),
+            submitted.fields.getTextInputValue('app_question_9').trim(),
+            submitted.fields.getTextInputValue('app_question_10').trim(),
         ].filter(q => q.length > 0);
 
         // Get the role to verify it exists
