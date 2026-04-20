@@ -202,68 +202,6 @@ async function handleSetup(interaction) {
                 .setMaxLength(100)
                 .setRequired(true),
         ),
-         new ActionRowBuilder().addComponents(
-            new TextInputBuilder()
-                .setCustomId('app_question_4')
-                .setLabel('Question 4 (required)')
-                .setPlaceholder('Hello')
-                .setStyle(TextInputStyle.Short)
-                .setMaxLength(100)
-                .setRequired(true),
-        ),
-         new ActionRowBuilder().addComponents(
-            new TextInputBuilder()
-                .setCustomId('app_question_5')
-                .setLabel('Question 5 (required)')
-                .setStyle(TextInputStyle.Short)
-                .setPlaceholder('Idk')
-                .setMaxLength(100)
-                .setRequired(true),
-        ),
-         new ActionRowBuilder().addComponents(
-            new TextInputBuilder()
-                .setCustomId('app_question_6')
-                .setLabel('Question 6 (required)')
-                .setStyle(TextInputStyle.Short)
-                .setPlaceholder('Maybe')
-                .setMaxLength(100)
-                .setRequired(true),
-        ),
-         new ActionRowBuilder().addComponents(
-            new TextInputBuilder()
-                .setCustomId('app_question_7')
-                .setLabel('Question 7 (required)')
-                .setStyle(TextInputStyle.Short)
-                .setPlaceholder('Goodbye')
-                .setMaxLength(100)
-                .setRequired(true),
-        ),
-        new ActionRowBuilder().addComponents(
-            new TextInputBuilder()
-                .setCustomId('app_question_8')
-                .setLabel('Question 8 (optional)')
-                .setStyle(TextInputStyle.Short)
-                .setPlaceholder('Bunny')
-                .setMaxLength(100)
-                .setRequired(false),
-        ),
-        new ActionRowBuilder().addComponents(
-            new TextInputBuilder()
-                .setCustomId('app_question_9')
-                .setLabel('Question 9 (optional)')
-                .setStyle(TextInputStyle.Short)
-                .setPlaceholder('Hell')
-                .setMaxLength(100)
-                .setRequired(false),
-        ),
-        new ActionRowBuilder().addComponents(
-            new TextInputBuilder()
-                .setCustomId('app_question_10')
-                .setLabel('Question 10 (optional)')
-                .setStyle(TextInputStyle.Short)
-                .setMaxLength(100)
-                .setRequired(false),
-        ),
     ];
 
     modal.addComponents(...rows);
@@ -284,13 +222,6 @@ async function handleSetup(interaction) {
             submitted.fields.getTextInputValue('app_question_1').trim(),
             submitted.fields.getTextInputValue('app_question_2').trim(),
             submitted.fields.getTextInputValue('app_question_3').trim(),
-            submitted.fields.getTextInputValue('app_question_4').trim(),
-            submitted.fields.getTextInputValue('app_question_5').trim(),
-            submitted.fields.getTextInputValue('app_question_6').trim(),
-            submitted.fields.getTextInputValue('app_question_7').trim(),
-            submitted.fields.getTextInputValue('app_question_8').trim(),
-            submitted.fields.getTextInputValue('app_question_9').trim(),
-           submitted.fields.getTextInputValue('app_question_10').trim(),
         ].filter(q => q.length > 0);
 
         // Get the role to verify it exists
