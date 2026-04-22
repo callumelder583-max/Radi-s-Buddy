@@ -187,20 +187,20 @@ async function handleSetup(interaction) {
         new ActionRowBuilder().addComponents(
             new TextInputBuilder()
                 .setCustomId('app_question_2')
-                .setLabel('Question 2 (required)')
+                .setLabel('Question 2 (optional)')
                 .setStyle(TextInputStyle.Short)
                 .setPlaceholder('What experience do you have?')
                 .setMaxLength(100)
-                .setRequired(true),
+                .setRequired(false),
         ),
         new ActionRowBuilder().addComponents(
             new TextInputBuilder()
                 .setCustomId('app_question_3')
-                .setLabel('Question 3 (required)')
+                .setLabel('Question 3 (optional)')
                 .setStyle(TextInputStyle.Short)
                 .setPlaceholder('Lol')
                 .setMaxLength(100)
-                .setRequired(true),
+                .setRequired(false),
         ),
     ];
 
