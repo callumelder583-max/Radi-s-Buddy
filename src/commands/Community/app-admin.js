@@ -207,7 +207,6 @@ async function handleSetup(interaction) {
     
     await interaction.showModal(modal);
 
-    
     try {
         const submitted = await interaction.awaitModalSubmit({
             time: 15 * 60 * 1000, // 15 minutes
@@ -217,8 +216,6 @@ async function handleSetup(interaction) {
         });
 
         const appName = submitted.fields.getTextInputValue('app_name').trim();
-            
-const appName = submitted.fields.getTextInputValue('app_name').trim();
         const roleId = submitted.fields.getTextInputValue('role_id').trim();
         const questions = [
             submitted.fields.getTextInputValue('app_question_1').trim(),
@@ -226,19 +223,7 @@ const appName = submitted.fields.getTextInputValue('app_name').trim();
             submitted.fields.getTextInputValue('app_question_3').trim(),
         ].filter(q => q.length > 0);
 
-        
-
     
-    // Get the role to verify it exists
-    const role = await interaction.guild.roles.fetch(roleId).catch(() => null);
-    if (!role) {
-        await submitted.reply({
-            embeds: [errorEmbed('Invalid Role', 'The selected role could not be found.')],
-            flags: ['Ephemeral'],
-        });
-        return;
-    }
-
         // Get the role to verify it exists
         let role;
         try {
