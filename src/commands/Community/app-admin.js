@@ -149,99 +149,76 @@ async function handleSetup(interaction) {
     }
 
     // Show modal for setting up a new application
-    const modal = new ModalBuilder()
-        .setCustomId('app_setup_modal')
-        .setTitle('Set Up New Application');
+   const rows = [
+        new ActionRowBuilder().addComponents(
+            new TextInputBuilder()
+                .setCustomId('app_name')
+                .setLabel('Application Name')
+                .setStyle(TextInputStyle.Short)
+                .setPlaceholder('e.g., Moderator, Helper, Developer')
+                .setMaxLength(50)
+                .setMinLength(1)
+                .setRequired(true),
+        ),
+        new ActionRowBuilder().addComponents(
+            new TextInputBuilder()
+                .setCustomId('role_id')
+                .setLabel('Role ID')
+                .setStyle(TextInputStyle.Short)
+                .setPlaceholder('Right-click a role and copy its ID')
+                .setMaxLength(20)
+                .setMinLength(1)
+                .setRequired(true),
+        ),
+        new ActionRowBuilder().addComponents(
+            new TextInputBuilder()
+                .setCustomId('app_question_1')
+                .setLabel('Question 1 (required)')
+                .setStyle(TextInputStyle.Short)
+                .setPlaceholder('Why do you want this role?')
+                .setMaxLength(100)
+                .setMinLength(1)
+                .setRequired(true),
+        ),
+        new ActionRowBuilder().addComponents(
+            new TextInputBuilder()
+                .setCustomId('app_question_2')
+                .setLabel('Question 2 (optional)')
+                .setStyle(TextInputStyle.Short)
+                .setPlaceholder('What experience do you have?')
+                .setMaxLength(100)
+                .setRequired(false),
+        ),
+        new ActionRowBuilder().addComponents(
+            new TextInputBuilder()
+                .setCustomId('app_question_3')
+                .setLabel('Question 3 (optional)')
+                .setStyle(TextInputStyle.Short)
+                .setMaxLength(100)
+                .setRequired(false),
+        ),
+    ];
 
-    const roleSelect = new RoleSelectMenuBuilder()
-        .setCustomId('role_id')
-        .setPlaceholder('Select the role users will apply for')
-        .setRequired(true);
-
-    const roleLabel = new LabelBuilder()
-        .setLabel('Application Role')
-        .setDescription('The role that users will be applying for')
-        .setRoleSelectMenuComponent(roleSelect);
-
-    const appNameInput = new TextInputBuilder()
-        .setCustomId('app_name')
-        .setStyle(TextInputStyle.Short)
-        .setPlaceholder('e.g., Moderator, Helper, Developer')
-        .setMaxLength(50)
-        .setMinLength(1)
-        .setRequired(true);
-
-    const appNameLabel = new LabelBuilder()
-        .setLabel('Application Name')
-        .setTextInputComponent(appNameInput);
-
-    const q1Input = new TextInputBuilder()
-        .setCustomId('app_question_1')
-        .setStyle(TextInputStyle.Short)
-        .setPlaceholder('Why do you want this role?')
-        .setMaxLength(100)
-        .setMinLength(1)
-        .setRequired(true);
-
-    const q1Label = new LabelBuilder()
-        .setLabel('Question 1 (required)')
-        .setTextInputComponent(q1Input);
-
-    const q2Input = new TextInputBuilder()
-        .setCustomId('app_question_2')
-        .setStyle(TextInputStyle.Short)
-        .setPlaceholder('What experience do you have?')
-        .setMaxLength(100)
-        .setRequired(false);
-
-    const q2Label = new LabelBuilder()
-        .setLabel('Question 2 (optional)')
-        .setTextInputComponent(q2Input);
-
-    const q3Input = new TextInputBuilder()
-        .setCustomId('app_question_3')
-        .setStyle(TextInputStyle.Short)
-        .setMaxLength(100)
-        .setRequired(false);
-
-    const q3Label = new LabelBuilder()
-        .setLabel('Question 3 (optional)')
-        .setTextInputComponent(q3Input);
-
-    modal.addLabelComponents(roleLabel, appNameLabel, q1Label, q2Label, q3Label);
-
+    modal.addComponents(...rows);
     await interaction.showModal(modal);
+    try {
+        const submitted = await interaction.awaitModalSubmit({
+            time: 15 * 60 * 1000, // 15 minutes
+            filter: (i) =>
+                i.customId === 'app_setup_modal' &&
+                i.user.id === interaction.user.id,
+            
+const appName = submitted.fields.getTextInputValue('app_name').trim();
+        const roleId = submitted.fields.getTextInputValue('role_id').trim();
+        const questions = [
+            submitted.fields.getTextInputValue('app_question_1').trim(),
+            submitted.fields.getTextInputValue('app_question_2').trim(),
+            submitted.fields.getTextInputValue('app_question_3').trim(),
+        ].filter(q => q.length > 0);
 
-    const submitted = await interaction.awaitModalSubmit({
-        time: 15 * 60 * 1000, // 15 minutes
-        filter: (i) =>
-            i.customId === 'app_setup_modal' &&
-            i.user.id === interaction.user.id,
-    }).catch(() => null);
+        
 
-    if (!submitted) {
-        logger.info('App setup modal dismissed or timed out', { guildId: interaction.guild.id, userId: interaction.user.id });
-        return;
-    }
-
-    const appName = submitted.fields.getTextInputValue('app_name').trim();
-    const selectedRoles = submitted.fields.getSelectedRoles('role_id');
-    const roleId = selectedRoles.first()?.id;
-
-    if (!roleId) {
-        await submitted.reply({
-            embeds: [errorEmbed('No Role Selected', 'You must select a role for the application.')],
-            flags: ['Ephemeral'],
-        });
-        return;
-    }
-
-    const questions = [
-        submitted.fields.getTextInputValue('app_question_1').trim(),
-        submitted.fields.getTextInputValue('app_question_2').trim(),
-        submitted.fields.getTextInputValue('app_question_3').trim(),
-    ].filter(q => q.length > 0);
-
+    
     // Get the role to verify it exists
     const role = await interaction.guild.roles.fetch(roleId).catch(() => null);
     if (!role) {
