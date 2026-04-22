@@ -223,7 +223,6 @@ async function handleSetup(interaction) {
             submitted.fields.getTextInputValue('app_question_3').trim(),
         ].filter(q => q.length > 0);
 
-    
         // Get the role to verify it exists
         let role;
         try {
