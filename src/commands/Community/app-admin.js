@@ -169,7 +169,7 @@ async function handleSetup(interaction) {
                 .setCustomId('role_id')
                 .setLabel('Role ID')
                 .setStyle(TextInputStyle.Short)
-                .setPlaceholder('Right-click a role and copy its ID')
+                .setPlaceholder('Select the role users will apply for')
                 .setMaxLength(20)
                 .setMinLength(1)
                 .setRequired(true),
@@ -198,7 +198,6 @@ async function handleSetup(interaction) {
                 .setCustomId('app_question_3')
                 .setLabel('Question 3 (optional)')
                 .setStyle(TextInputStyle.Short)
-                .setPlaceholder('Lol')
                 .setMaxLength(100)
                 .setRequired(false),
         ),
