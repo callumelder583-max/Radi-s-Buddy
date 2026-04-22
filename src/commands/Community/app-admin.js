@@ -149,7 +149,7 @@ async function handleSetup(interaction) {
     }
 
     // Show modal for setting up a new application
-   const modal = new ModalBuilder()
+    const modal = new ModalBuilder()
         .setCustomId('app_setup_modal')
         .setTitle('Set Up New Application');
 
@@ -206,6 +206,7 @@ async function handleSetup(interaction) {
     modal.addComponents(...rows);
     
     await interaction.showModal(modal);
+
     
     try {
         const submitted = await interaction.awaitModalSubmit({
@@ -213,7 +214,7 @@ async function handleSetup(interaction) {
             filter: (i) =>
                 i.customId === 'app_setup_modal' &&
                 i.user.id === interaction.user.id,
-  });
+        });
 
         const appName = submitted.fields.getTextInputValue('app_name').trim();
             
