@@ -149,7 +149,11 @@ async function handleSetup(interaction) {
     }
 
     // Show modal for setting up a new application
-   const rows = [
+   const modal = new ModalBuilder()
+        .setCustomId('app_setup_modal')
+        .setTitle('Set Up New Application');
+
+    const rows = [
         new ActionRowBuilder().addComponents(
             new TextInputBuilder()
                 .setCustomId('app_name')
@@ -200,13 +204,18 @@ async function handleSetup(interaction) {
     ];
 
     modal.addComponents(...rows);
+    
     await interaction.showModal(modal);
+    
     try {
         const submitted = await interaction.awaitModalSubmit({
             time: 15 * 60 * 1000, // 15 minutes
             filter: (i) =>
                 i.customId === 'app_setup_modal' &&
                 i.user.id === interaction.user.id,
+  });
+
+        const appName = submitted.fields.getTextInputValue('app_name').trim();
             
 const appName = submitted.fields.getTextInputValue('app_name').trim();
         const roleId = submitted.fields.getTextInputValue('role_id').trim();
