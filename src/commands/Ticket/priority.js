@@ -18,11 +18,11 @@ export default {
                 .setRequired(true)
                 .addChoices(
                     { name: ":Time: Waiting", value: "Waiting" },
-                    { name: ":dollar: Paid", value: "Paid" },
-                    { name: ":red_envelope: Invite Rewards", value: "Invite Rewards" },
-                    { name: ":speech_balloon: MessageRewards", value: "Message Rewards" },
-                    { name: ":tada: GiveawayClaim", value: "Giveaway Claim" },
-                    { name: ":rocket: BoostRewards", value: "Boost Rewards" },
+                    { name: "💵 Paid", value: "Paid" },
+                    { name: "🧧 InviteRewards", value: "Invite Rewards" },
+                    { name: "💬 MessageRewards", value: "Message Rewards" },
+                    { name: "🎉 GiveawayClaim", value: "Giveaway Claim" },
+                    { name: "🚀 BoostRewards", value: "Boost Rewards" },
                     { name: "🚨 Priority", value: "Paid For Priortiy" },
                 ),
             )
