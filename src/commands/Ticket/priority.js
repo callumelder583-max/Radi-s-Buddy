@@ -17,13 +17,11 @@ export default {
                 .setDescription("The priority level for the ticket.")
                 .setRequired(true)
                 .addChoices(
-                    { name: "⏲️ Waiting", value: "Waiting" },
-                    { name: "🚨 Priority", value: "Paid For Priortiy" },
-                    { name: "💵 Paid", value: "Paid" },
-                    { name: "🧧 InviteRewards", value: "Invite Rewards" },
-                    { name: "💬 MessageRewards", value: "Message Rewards" },
-                    { name: "🎉 GiveawayClaim", value: "Giveaway Claim" },
-                    { name: "🚀 BoostRewards", value: "Boost Rewards" },
+                    { name: "🔴 Urgent", value: "urgent" },
+                    { name: "🟠 High", value: "high" },
+                    { name: "🟡 Medium", value: "medium" },
+                    { name: "🟢 Low", value: "low" },
+                    { name: "⚪ None", value: "none" },
                 ),
             )
         .setDMPermission(false),
