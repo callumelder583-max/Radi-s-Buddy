@@ -17,7 +17,7 @@ export default {
                 .setDescription("The priority level for the ticket.")
                 .setRequired(true)
                 .addChoices(
-                    { name: ":Time: Waiting", value: "Waiting" },
+                    { name: "⏲️ Waiting", value: "Waiting" },
                     { name: "🚨 Priority", value: "Paid For Priortiy" },
                     { name: "💵 Paid", value: "Paid" },
                     { name: "🧧 InviteRewards", value: "Invite Rewards" },
