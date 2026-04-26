@@ -17,11 +17,13 @@ export default {
                 .setDescription("The priority level for the ticket.")
                 .setRequired(true)
                 .addChoices(
-                    { name: "🔴 Urgent", value: "urgent" },
-                    { name: "🟠 High", value: "high" },
-                    { name: "🟡 Medium", value: "medium" },
-                    { name: "🟢 Low", value: "low" },
-                    { name: "⚪ None", value: "none" },
+                    { Waiting: ":Time: Waiting", value: "Waiting" },
+                    { Paid: ":dollar: Paid", value: "Paid" },
+                    { InviteRewards: ":red_envelope: Invite Rewards", value: "Invite Rewards" },
+                    { MessageRewards: ":speech_balloon: MessageRewards", value: "Message Rewards" },
+                    { GiveawayClaim: ":tada: GiveawayClaim", value: "Giveaway Claim" },
+                    { BoostRewards: ":rocket: BoostRewards", value: "Boost Rewards" },
+                    { Priority: "🚨 Priority", value: "Paid For Priortiy" },
                 ),
             )
         .setDMPermission(false),
