@@ -18,12 +18,12 @@ export default {
                 .setRequired(true)
                 .addChoices(
                     { name: ":Time: Waiting", value: "Waiting" },
+                    { name: "🚨 Priority", value: "Paid For Priortiy" },
                     { name: "💵 Paid", value: "Paid" },
                     { name: "🧧 InviteRewards", value: "Invite Rewards" },
                     { name: "💬 MessageRewards", value: "Message Rewards" },
                     { name: "🎉 GiveawayClaim", value: "Giveaway Claim" },
                     { name: "🚀 BoostRewards", value: "Boost Rewards" },
-                    { name: "🚨 Priority", value: "Paid For Priortiy" },
                 ),
             )
         .setDMPermission(false),
