@@ -209,7 +209,7 @@ export const botConfig = {
     // Priority options users/staff can assign.
     priorities: {
        Waiting: {
-        emoji: ":Time:",
+        emoji: "⏲️",
         color: "#95A5A6",
         label: "Waiting",
       },
