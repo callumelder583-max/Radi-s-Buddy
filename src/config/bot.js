@@ -208,30 +208,40 @@ export const botConfig = {
 
     // Priority options users/staff can assign.
     priorities: {
-       none: {
-        emoji: "⚪",
+       Waiting: {
+        emoji: ":Time:",
         color: "#95A5A6",
-        label: "None",
+        label: "Waiting",
       },
-      low: {
-        emoji: "🟢",
-        color: "#2ECC71",
-        label: "Low",
-      },
-      medium: {
-        emoji: "🟡",
-        color: "#F1C40F",
-        label: "Medium",
-      },
-      high: {
-        emoji: "🔴",
-        color: "#E74C3C",
-        label: "High",
-      },
-      urgent: {
+      Priority: {
         emoji: "🚨",
+        color: "#2ECC71",
+        label: "Priortiy",
+      },
+      Paid: {
+        emoji: "💵 ",
+        color: "#F1C40F",
+        label: "Paid",
+      },
+      InviteRewards: {
+        emoji: "🧧",
+        color: "#E74C3C",
+        label: "invite rewards",
+      },
+      MessageRewards: {
+        emoji: "💬",
         color: "#E91E63",
-        label: "Urgent",
+        label: "message rewards",
+      },
+      GiveawayClaim: {
+        emoji: "🎉",
+        color: "#E91E63",
+        label: "giveaway claim",
+      },
+      BoostRewards: {
+        emoji: "🚀",
+        color: "#E91E63",
+        label: "boost rewards",
       },
     },
 
